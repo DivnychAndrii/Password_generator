@@ -3,37 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <div class="header">
-        <h1>Password generator</h1>
+    <div class="container">
+        <div class="box">
+            <div class="header">
+                <h1>Password generator</h1>
+            </div>
+            <div class="forms">
+                <form action="{% url 'home' %}">
+                    <select class='select' name="length" >
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12" selected='select'>12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                    </select>
+                    <br><br>
+                    <input type="checkbox" name="uppercase"> Uppercase
+                    <input type="checkbox" name="numbers"> Numbers
+                    <input type="checkbox" name="special"> Special characters
+                    <br><br>
+                    <input type="submit" value="Generate password">
+                </form>
+            </div>
+            <div>
+                <h1>Your password is: </h1>
+                <h2 class="password">{{ password }}</h2>
+            </div>
+        </div>
+        <div class="about">
+            <a href="{% url 'about' %}">About</a>
+        </div>
     </div>
-    <div class="forms">
-        <form action="{% url 'home' %}">
-            <select name="length" >
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12" selected='select'>12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-                <option value="18">18</option>
-            </select>
-            <input type="checkbox" name="uppercase"> Uppercase
-            <input type="checkbox" name="numbers"> Numbers
-            <input type="checkbox" name="special"> Special
-            <input type="submit" value="Generate password">
-        </form>
-    </div>
-    <div class="password">
-        <h1>Your password is: </h1>
-        <h2>{{ password }}</h2>
-    </div>
-    <div class="about">
-        <a href="{% url 'about' %}">About</a>
-    </div>
-    
+
 </body>
 </html>
 

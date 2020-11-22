@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 </head>
 <body>
- <h1>Tons of crap</h1>
+    <div class="box">
+        <h1>There is nothing here</h1>
+        <h1>Go and generate the password</h1>
+        <div class="about">
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+    </div>
 </body>
 </html>
