@@ -1,0 +1,1 @@
+Refreshing my knowledge of Django here
